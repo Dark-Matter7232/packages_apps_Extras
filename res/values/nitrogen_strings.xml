@@ -11,13 +11,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- App Title -->
-    <string name="nitrogen_settings_title">Nitrogen Settings</string>
-
-    <!-- Categories -->
-    <string name="button_title">Buttons</string>
-    <string name="gestures_title">Gestures</string>
-    <string name="lockscreen_title">Lock screen</string>
+<!--    <string name="lockscreen_title">Lock screen</string>
     <string name="misc_title">Miscellaneous</string>
     <string name="navbar_title">Navigation bar</string>
     <string name="powermenu_title">Power menu</string>
@@ -27,13 +21,13 @@
     <string name="volume_title">Volume rockers</string>
     <string name="notifications_title">Notifications</string>
 
-    <!-- General strings -->
+    
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
-    <string name="save">Save</string>
+    <string name="save">Save</string> -->
 
-    <!-- Color Picker -->
+    
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
     <string name="arrow_right">→</string>
