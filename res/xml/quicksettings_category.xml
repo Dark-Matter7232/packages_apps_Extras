@@ -21,7 +21,7 @@
         android:max="255"
         settings:min="0"
         settings:units=""
-        android:persistent="false" />
+        android:persistent="false" /> 
 
    <com.extras.settings.preferences.SecureSettingSwitchPreference
         android:key="qs_show_brightness"
@@ -34,5 +34,25 @@
         android:summary="@string/qs_brightness_position_bottom_summary"
         android:defaultValue="false"
         android:dependency="qs_show_brightness" />
+
+     <ListPreference
+             android:key="qs_tile_animation_style"
+             android:title="@string/qs_tile_animation_style_title"
+             android:entries="@array/qs_tile_animation_style_entries"
+             android:entryValues="@array/qs_tile_animation_style_values"
+             android:persistent="false" />
+        <ListPreference
+            android:key="qs_tile_animation_duration"
+            android:title="@string/qs_tile_animation_duration_title"
+            android:entries="@array/qs_tile_animation_duration_entries"
+            android:entryValues="@array/qs_tile_animation_duration_values"
+            android:persistent="false" />
+
+      <ListPreference
+            android:key="qs_tile_animation_interpolator"
+            android:title="@string/qs_tile_animation_interpolator_title"
+            android:entries="@array/qs_tile_animation_interpolator_entries"
+            android:entryValues="@array/qs_tile_animation_interpolator_values"
+            android:persistent="false" />
 
 </PreferenceScreen>
