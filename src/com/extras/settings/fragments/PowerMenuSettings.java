@@ -48,7 +48,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.nitrogen_settings_power);
+        addPreferencesFromResource(R.xml.powermenu_category);
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
