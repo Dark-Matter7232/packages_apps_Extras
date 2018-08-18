@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.custom.settings;
+package com.extras.settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 
