@@ -26,4 +26,11 @@
             android:title="@string/powermenu_title"
             android:fragment="com.extras.settings.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/>
+
+<!-- Buttons -->
+        <Preference
+            android:key="buttonsettings_category"
+            android:title="@string/button_title"
+            android:fragment="com.extras.settings.fragments.ButtonSettings"
+            android:icon="@drawable/ic_settings_buttons"/>
 </PreferenceScreen>
