@@ -21,4 +21,15 @@
         android:summary="@string/allow_incall_home_summary"
         android:defaultValue="true" />
 
+      <PreferenceCategory
+        android:key="button_keys"
+        android:title="@string/button_keys_title" >
+
+        <com.extras.settings.preferences.SystemSettingSwitchPreference
+            android:key="navigation_bar_show"
+            android:title="@string/navigation_bar_show_title"
+            android:summary="@string/navigation_bar_show_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

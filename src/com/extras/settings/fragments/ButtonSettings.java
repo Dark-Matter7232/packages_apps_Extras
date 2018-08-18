@@ -34,12 +34,27 @@ import android.provider.Settings;
 
 import com.android.settings.R;
 
+import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.SummaryLoader;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+
+import com.android.internal.util.omni.OmniSwitchConstants;
+import com.android.internal.util.omni.PackageUtils;
+import com.android.internal.util.omni.DeviceUtils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.extras.settings.preferences.SystemSettingSwitchPreference;
+
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener{
+
+    private static final String KEYS_SHOW_NAVBAR_KEY = "navigation_bar_show";
+    private static final String CATEGORY_KEYS = "button_keys"; 
+
+    private SystemSettingSwitchPreference mEnableNavBar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -47,6 +62,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.buttonsettings_category);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory keysCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_KEYS);
+
+        boolean showNavBarDefault = DeviceUtils.deviceSupportNavigationBar(getActivity());
+        boolean showNavBar = Settings.System.getInt(resolver,
+                Settings.System.OMNI_NAVIGATION_BAR_SHOW, showNavBarDefault ? 1 : 0) == 1;
+        mEnableNavBar = (SystemSettingSwitchPreference) prefScreen.findPreference(KEYS_SHOW_NAVBAR_KEY);
+        mEnableNavBar.setChecked(showNavBar);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
