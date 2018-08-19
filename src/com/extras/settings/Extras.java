@@ -34,12 +34,12 @@ public class CustomSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.custom_settings);
+        addPreferencesFromResource(R.xml.extras_settings);
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CUSTOM_SETTINGS;
+        return MetricsProto.MetricsEvent.EXTRAS;
     }
 
     public static void lockCurrentOrientation(Activity activity) {
