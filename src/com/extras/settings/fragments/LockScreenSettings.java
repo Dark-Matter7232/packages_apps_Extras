@@ -42,6 +42,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
+        
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+    ListPreference mLockClockFonts;
 
     @Override
     public void onCreate(Bundle icicle) {
