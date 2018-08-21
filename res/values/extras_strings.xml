@@ -82,7 +82,7 @@
 
     <!-- Navigation Bar Visibility -->
     <string name="navigation_bar_show_title">Navigation Bar Visibility</string>
-    <string name="navigation_bar_show_summary">Change your Navbar's Visibility</string>
+    <string name="navigation_bar_show_summary">Change your Navbars Visibility</string>
     <string name="button_keys_title">Navbar Settings</string>
 
     <!-- Buttons backlight timeout -->
