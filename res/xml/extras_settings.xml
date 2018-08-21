@@ -14,6 +14,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/extras_settings_title" >
 
+
+        <!-- Status Bar -->
+        <Preference
+            android:key="statusbar_category"
+            android:title="@string/statusbar_title"
+            android:fragment="com.extras.settings.fragments.StatusBarSettings" 
+            android:icon="@drawable/ic_settings_statusbar"/>
+
  <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
@@ -33,4 +41,26 @@
             android:title="@string/button_title"
             android:fragment="com.extras.settings.fragments.ButtonSettings"
             android:icon="@drawable/ic_settings_buttons"/>
+
+         <!-- Recents -->
+        <Preference
+            android:key="recents_category"
+            android:title="@string/recents_title"
+            android:fragment="com.extras.settings.fragments.RecentsSettings"
+            android:icon="@drawable/ic_settings_recents"/>     
+
+        <!-- Navigation Bar -->
+        <Preference
+            android:key="navigationbar_category"
+            android:title="@string/navbar_title"
+            android:fragment="com.extras.settings.fragments.NavbarSettings"
+            android:icon="@drawable/ic_settings_navbar"/>
+
+       <!-- Gestures -->
+        <Preference
+            android:key="gestures_category"
+            android:title="@string/gestures_title"
+            android:fragment="com.extras.settings.fragments.GestureSettings"
+            android:icon="@drawable/ic_settings_gesture"/>
+
 </PreferenceScreen>
