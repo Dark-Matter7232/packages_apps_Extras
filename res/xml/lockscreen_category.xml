@@ -41,4 +41,13 @@
         android:entryValues="@array/lock_clock_fonts_values"
         android:summary="@string/lock_clock_font_summary"
         android:persistent="false" />
+ 
+    <Preference
+            android:title="@string/lockscreen_tuner_title" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
+    </Preference>
+
+
 </PreferenceScreen>

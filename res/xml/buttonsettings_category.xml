@@ -156,17 +156,5 @@
             android:title="@string/hardware_keys_double_tap_title" >
         </com.extras.settings.preferences.ActionPreference> 
     </PreferenceCategory>
- 
-
-      <PreferenceCategory
-        android:key="button_keys"
-        android:title="@string/button_keys_title" >
-
-        <com.extras.settings.preferences.SystemSettingSwitchPreference
-            android:key="navigation_bar_show"
-            android:title="@string/navigation_bar_show_title"
-            android:summary="@string/navigation_bar_show_summary"
-            android:defaultValue="false" />
-    </PreferenceCategory>
 
 </PreferenceScreen>
