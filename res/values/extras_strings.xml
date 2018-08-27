@@ -263,8 +263,15 @@
     <string name="battery_style_big_circle">Big circle</string>
     <string name="battery_style_big_dotted_circle">Big dotted circle</string>
     <string name="show_battery_percent_title">Show percentage</string>
-     <string name="battery_percent_none">Don\'t show</string>
+    <string name="battery_percent_none">Don\'t show</string>
     <string name="battery_percent_outside">Show near icon</string>
     <string name="battery_percent_inside">Show inside icon</string>
+
+    <!-- AppOps -->
+    <string name="app_ops_settings_title">App Ops</string>
+
+        <!-- lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
+    <string name="lockscreen_visualizer_summary">Shows some spectrum bars reacting to the music you\'re listening (works with most audio apps)</string>
  
    </resources>
