@@ -155,7 +155,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         AlertDialog dialog;
         if (preference == mStatusBarClockShow) {
             boolean value = (Boolean) newValue;
