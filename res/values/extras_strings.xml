@@ -273,5 +273,22 @@
         <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Lock screen visualizer</string>
     <string name="lockscreen_visualizer_summary">Shows some spectrum bars reacting to the music you\'re listening (works with most audio apps)</string>
+
+    
+    <!-- Heads up -->
+    <string name="heads_up_notifications">Heads up</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+    <string name="add_heads_up_package">Add app</string>
+    <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
+    <string name="heads_up_stoplist_title">Applist</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
+
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+
  
    </resources>

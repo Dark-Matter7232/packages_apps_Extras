@@ -69,6 +69,20 @@
             android:fragment="com.extras.settings.fragments.AnimationSettings"
             android:icon="@drawable/ic_settings_miscs"/>
 
+               <!-- Notifications -->
+        <Preference
+            android:key="notifications_category"
+            android:title="@string/notifications_title"
+            android:fragment="com.extras.settings.fragments.NotificationSettings"
+            android:icon="@drawable/ic_settings_notification"/>
+     
+        <!-- Quick Settings panel -->
+        <Preference
+            android:key="quicksettings_category"
+            android:title="@string/quicksettings_title"
+            android:fragment="com.extras.settings.fragments.QuickSettings"
+            android:icon="@drawable/ic_settings_quicksettings"/>
+
        <!-- AppOps -->
         <Preference
             android:key="app_ops_settings"
