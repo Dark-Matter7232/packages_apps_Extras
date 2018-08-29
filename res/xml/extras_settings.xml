@@ -91,6 +91,13 @@
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.applications.appops.AppOpsSummary" />
-        </Preference>
+        </com.extras.settings.preferences.CardviewPreference>
+
+        <com.extras.settings.preferences.CardviewPreference
+        android:key="style_settings"
+        android:title="@string/style_settings_title"
+        android:summary="@string/style_settings_summary"
+        android:icon="@drawable/ic_settings_style"
+        android:fragment="com.extras.settings.fragments.StyleSettings" />
 
 </PreferenceScreen>

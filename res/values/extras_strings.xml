@@ -28,6 +28,8 @@
     <string name="notifications_title">Notifications</string>
     <string name="device_part_title">Device features</string>
     <string name="animation_title">Animations</string> 
+    <string name="style_settings_title">Style</string>
+    <string name="style_settings_summary">Wallpapers and other swag</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
