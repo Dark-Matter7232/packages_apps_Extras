@@ -35,6 +35,11 @@
             android:title="@string/powermenu_screenshot"
             android:defaultValue="false" />
 
+         <com.extras.settings.preferences.SystemSettingSwitchPreference
+        android:key="global_actions_onthego"
+        android:title="@string/global_actions_onthego_title"
+        android:defaultValue="false" />
+
           <SwitchPreference
             android:key="powermenu_torch"
             android:title="@string/powermenu_torch"
