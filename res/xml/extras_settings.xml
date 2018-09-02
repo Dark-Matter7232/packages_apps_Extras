@@ -28,6 +28,12 @@
             android:title="@string/lockscreen_title"
             android:fragment="com.extras.settings.fragments.LockScreenSettings"
             android:icon="@drawable/ic_settings_lockscreens"/>
+
+        <com.extras.settings.preferences.CardviewPreference
+        android:key="lockscreen_settings"
+        android:title="@string/lockscreen_category_title"
+        android:icon="@drawable/ic_lockscreen_tile"
+        android:fragment="com.extras.settings.fragments.LockscreenItemSettings" />
 <!-- Power Menu -->
         <com.extras.settings.preferences.CardviewPreference
             android:key="powermenu_category"
@@ -99,5 +105,11 @@
         android:summary="@string/style_settings_summary"
         android:icon="@drawable/ic_settings_style"
         android:fragment="com.extras.settings.fragments.StyleSettings" />
+
+        <Preference
+        android:key="omnijaws_settings"
+        android:icon="@drawable/ic_qs_weather_default_on"
+        android:title="@string/weather_title"
+        android:fragment="com.extras.settings.fragments.OmniJawsSettings" />
 
 </PreferenceScreen>
