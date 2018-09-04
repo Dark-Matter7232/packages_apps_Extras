@@ -159,17 +159,17 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         boolean hideForcePercentage = batteryStyle == 6; /*text*/
         mBatteryPercentage.setEnabled(!hideForcePercentage);
 
-        final ContentResolver resolver = getActivity().getContentResolver();
+ //      final ContentResolver resolver = getActivity().getContentResolver();
         boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
         mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
         mNetMonitor.setChecked(isNetMonitorEnabled);
         mNetMonitor.setOnPreferenceChangeListener(this);
 
-        int value = Settings.System.getIntForUser(resolver,
+        int valuee = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
         mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setValue(value);
+        mThreshold.setValue(valuee);
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
     }
@@ -280,7 +280,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             mBatteryPercentage.setSummary(mBatteryPercentage.getEntries()[index]); 
            return true;
       } else if (preference == mNetMonitor) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
                     UserHandle.USER_CURRENT);
@@ -288,7 +288,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             mThreshold.setEnabled(value);
             return true;
         } else if (preference == mThreshold) {
-            int val = (Integer) objValue;
+            int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
