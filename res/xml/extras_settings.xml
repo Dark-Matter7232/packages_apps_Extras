@@ -106,15 +106,10 @@
         android:icon="@drawable/ic_settings_style"
         android:fragment="com.extras.settings.fragments.StyleSettings" />
 
-        <com.extras.settings.preferences.CardviewPreference
+        <Preference
         android:key="omnijaws_settings"
         android:icon="@drawable/ic_qs_weather_default_on"
         android:title="@string/weather_title"
         android:fragment="com.extras.settings.fragments.OmniJawsSettings" />
-
-       <com.extras.settings.preferences.CardviewPreference
-        android:icon="@drawable/ic_info_outline_24dp"
-        android:persistent="false"
-        android:summary="@string/meme" />
 
 </PreferenceScreen>
