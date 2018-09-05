@@ -264,6 +264,7 @@
     <string name="battery_style_hidden">Hidden</string>
     <string name="battery_style_big_circle">Big circle</string>
     <string name="battery_style_big_dotted_circle">Big dotted circle</string>
+    <string name="battery_style_square">Square</string>
     <string name="show_battery_percent_title">Show percentage</string>
     <string name="battery_percent_none">Don\'t show</string>
     <string name="battery_percent_outside">Show near icon</string>

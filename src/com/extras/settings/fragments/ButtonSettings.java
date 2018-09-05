@@ -238,7 +238,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             setActionPreferencesEnabled(!value);
             return true;
         }  else if (preference == mVolumeKeyCursorControl) {
-            String value = (String) value;
+            String value = (String) newValue;
             String volumeKeyCursorControl = (String) value;
             int volumeKeyCursorControlValue = Integer.parseInt(volumeKeyCursorControl);
             Settings.System.putInt(getActivity().getContentResolver(),
