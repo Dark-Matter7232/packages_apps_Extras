@@ -89,7 +89,7 @@
             android:fragment="com.extras.settings.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
-       <!-- AppOps -->
+       <!-- AppOps 
         <com.extras.settings.preferences.CardviewPreference
             android:key="app_ops_settings"
             android:title="@string/app_ops_settings_title"
@@ -109,7 +109,7 @@
         android:key="alarm_blocker" 
         android:fragment="com.extras.settings.fragments.AlarmBlocker" 
         android:title="@string/alarm_blocker" 
-        android:summary="@string/alarm_blocker_summary" />
+        android:summary="@string/alarm_blocker_summary" /> -->
 
         <com.extras.settings.preferences.CardviewPreference
         android:key="style_settings"
