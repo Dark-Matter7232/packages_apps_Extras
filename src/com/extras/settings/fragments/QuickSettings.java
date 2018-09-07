@@ -21,7 +21,7 @@ import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
 
-import android.database.ContentObserver
+import android.database.ContentObserver;
 
 import com.extras.settings.preferences.CustomSeekBarPreference; 
 
@@ -38,7 +38,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
        private ListPreference mTileAnimationDuration;
 
        private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
-       private ListPreference mTileAnimationInterpolator
+       private ListPreference mTileAnimationInterpolator;
 
        private static final String OMNI_QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
        private CustomSeekBarPreference mQsPanelAlpha;
