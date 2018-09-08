@@ -95,7 +95,6 @@
             android:fragment="com.extras.settings.fragments.System" 
             android:icon="@drawable/ic_settings_appops"/>
 
-
        <!-- AppOps 
         <com.extras.settings.preferences.CardviewPreference
             android:key="app_ops_settings"
