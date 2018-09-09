@@ -90,7 +90,7 @@
             android:icon="@drawable/ic_settings_quicksettings"/>
 
        <com.extras.settings.preferences.CardviewPreference  
-            android:key="statusbar_category"
+            android:key="system_category"
             android:title="Settings + Misc"
             android:fragment="com.extras.settings.fragments.System" 
             android:icon="@drawable/ic_settings_appops"/>
