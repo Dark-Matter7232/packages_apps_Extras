@@ -90,6 +90,10 @@
             android:entries="@array/battery_percent_entries"
             android:entryValues="@array/battery_percent_values" />
 
+    <PreferenceCategory
+        android:key="battery_settings"
+        android:title="Network Traffic Indicator"/>
+
     <com.extras.settings.preferences.SystemSettingSwitchPreference
         android:key="network_traffic_state"
         android:title="@string/network_traffic_state_title"
@@ -101,5 +105,14 @@
         android:max="10"
         settings:min="0"
         settings:units="" />
+
+    <PreferenceCategory
+        android:key="battery_settings"
+        android:title="Logo Style"/>
+ <Preference
+        android:key="status_bar_logo"
+        android:title="@string/status_bar_logo_category_title"
+        android:summary="@string/status_bar_logo_category_summary"
+        android:fragment="com.extras.settings.fragments.StatusBarLogo" />
 
 </PreferenceScreen>
