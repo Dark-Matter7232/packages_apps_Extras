@@ -37,5 +37,10 @@
         android:title="@string/alarm_blocker" 
         android:summary="@string/alarm_blocker_summary" />
 
+        <com.extras.settings.preferences.SystemSettingListPreference
+            android:key="screenshot_type"
+            android:entries="@array/screenshot_type_entries"
+            android:entryValues="@array/screenshot_type_values"
+            android:title="@string/screenshot_type_title" />
  
 </PreferenceScreen>
