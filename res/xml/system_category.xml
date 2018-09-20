@@ -48,5 +48,5 @@
             android:title="@string/system_app_remover"
             android:summary="@string/system_app_remover_summary"
             android:fragment="com.extras.settings.fragments.SystemappRemover" />
- 
+
 </PreferenceScreen>
