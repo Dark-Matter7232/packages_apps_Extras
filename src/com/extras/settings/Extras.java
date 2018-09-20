@@ -28,7 +28,7 @@ import com.android.settings.R;
 
 import com.android.settings.SettingsPreferenceFragment;
 
-public class CustomSettings extends SettingsPreferenceFragment {
+public class Extras extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
