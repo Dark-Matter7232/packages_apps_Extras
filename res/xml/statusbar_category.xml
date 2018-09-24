@@ -108,6 +108,13 @@
             android:entries="@array/battery_percent_entries"
             android:entryValues="@array/battery_percent_values" />
 
+      <Preference
+         android:key="carrierlabel_settings"
+         android:title="@string/carrier_label_category_title"
+         android:summary="@string/carrier_label_category_summary"
+         android:fragment="com.extras.settings.fragments.CarrierLabelSettings" />
+
+
     <PreferenceCategory
         android:key="battery_settings"
         android:title="Network Traffic Indicator"/>
