@@ -42,6 +42,7 @@ import android.util.Log;
 import com.extras.settings.preferences.CustomSeekBarPreference;
 //import com.nitrogen.settings.preferences.SystemSettingSwitchPreference;
 
+import com.extras.settings.preferences.XUtils;
 import com.extras.settings.preferences.SystemSettingSwitchPreference;
 import java.util.List;
 import java.util.ArrayList;
@@ -78,6 +79,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
+
+    private static final String PREF_STATUS_BAR_WEATHER = "status_bar_show_weather_temp";
+    private ListPreference mStatusBarWeather;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -172,6 +176,19 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mThreshold.setValue(valuee);
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
+
+               // Status bar weather
+       mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
+       int temperatureShow = Settings.System.getIntForUser(resolver,
+               Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0,
+               UserHandle.USER_CURRENT);
+       mStatusBarWeather.setValue(String.valueOf(temperatureShow));
+       if (temperatureShow == 0) {
+           mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
+       } else {
+           mStatusBarWeather.setSummary(mStatusBarWeather.getEntry());
+       }
+          mStatusBarWeather.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -293,7 +310,20 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
             return true;
-        }
+        } else if (preference == mStatusBarWeather) {
+            int temperatureShow = Integer.valueOf((String) objValue);
+            int index = mStatusBarWeather.findIndexOfValue((String) objValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                   Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,
+                   temperatureShow, UserHandle.USER_CURRENT);
+            if (temperatureShow == 0) {
+                mStatusBarWeather.setSummary(R.string.statusbar_weather_summary);
+            } else {
+                mStatusBarWeather.setSummary(
+                mStatusBarWeather.getEntries()[index]);
+            }
+            return true;
+      }
         return false;
     }
 
@@ -301,6 +331,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
     }
+
+    	   @Override
+    public void onPause() {
+        super.onPause();
+    }
+
 
     @Override
     public int getMetricsCategory() {
