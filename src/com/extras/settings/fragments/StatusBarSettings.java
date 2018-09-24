@@ -42,7 +42,7 @@ import android.util.Log;
 import com.extras.settings.preferences.CustomSeekBarPreference;
 //import com.nitrogen.settings.preferences.SystemSettingSwitchPreference;
 
-import com.extras.settings.preferences.XUtils;
+import com.extras.settings.preferences.Utils;
 import com.extras.settings.preferences.SystemSettingSwitchPreference;
 import java.util.List;
 import java.util.ArrayList;
