@@ -52,6 +52,9 @@ import java.util.Collections;
 
 import java.util.Date;
 
+//import com.msm.xtended.preferences.CustomSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
@@ -83,6 +86,16 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_STATUS_BAR_WEATHER = "status_bar_show_weather_temp";
     private ListPreference mStatusBarWeather;
 
+        private static final String STATUS_BAR_CLOCK_COLOR = "status_bar_clock_color";
+    private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
+    private static final String STATUS_BAR_CLOCK_FONT_STYLE  = "status_bar_clock_font_style";
+
+    static final int DEFAULT_STATUS_CLOCK_COLOR = 0xffffffff;
+
+     private ColorPickerPreference mClockColor;
+    private CustomSeekBarPreference mClockSize;
+    private ListPreference mClockFontStyle;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -91,7 +104,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
    
-                ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        int intColor;
+        String hexColor;
 	// clock settings
         mStatusBarClockShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK);
         mStatusBarSecondsShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
@@ -176,6 +192,24 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mThreshold.setValue(valuee);
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
+
+        mClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
+            mClockColor.setOnPreferenceChangeListener(this);
+            intColor = Settings.System.getInt(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mClockColor.setSummary(hexColor);
+            mClockColor.setNewPreviewColor(intColor);
+        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        int clockSize = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
+        mClockSize.setValue(clockSize / 1);
+        mClockSize.setOnPreferenceChangeListener(this);
+        mClockFontStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_FONT_STYLE);
+        int showClockFont = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 0);
+        mClockFontStyle.setValue(String.valueOf(showClockFont));
+        mClockFontStyle.setOnPreferenceChangeListener(this);
 
                // Status bar weather
        mStatusBarWeather = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER);
@@ -323,7 +357,27 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 mStatusBarWeather.getEntries()[index]);
             }
             return true;
-      }
+      } else if (preference == mClockColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(resolver,
+                        Settings.System.STATUS_BAR_CLOCK_COLOR, intHex);
+                return true;
+        }  else if (preference == mClockSize) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_SIZE, width);
+            return true;
+        }  else if (preference == mClockFontStyle) {
+            int showClockFont = Integer.valueOf((String) newValue);
+            int index = mClockFontStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.
+                STATUS_BAR_CLOCK_FONT_STYLE, showClockFont);
+            mClockFontStyle.setSummary(mClockFontStyle.getEntries()[index]);
+            return true;
+         }
         return false;
     }
 

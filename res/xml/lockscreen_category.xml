@@ -54,12 +54,27 @@
         android:title="@string/double_tap_sleep_lockscreen"
         android:defaultValue="true" />
 
-    <com.extras.settings.preferences.SystemSettingSwitchPreference
+    <PreferenceCategory
         android:key="lockscreen_visualizer"
-        android:title="@string/lockscreen_visualizer_title"
-        android:summary="@string/lockscreen_visualizer_summary"
-        android:dependency="lockscreen_media_metadata"
-        android:defaultValue="false"/>
+        android:title="@string/lockscreen_visualizer_category" />
+
+    <com.extras.settings.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_visualizer_enabled"
+            android:title="@string/lockscreen_visualizer_enable"
+            android:summary="@string/lockscreen_visualizer_enable_summary"
+            android:defaultValue="false" />
+        <com.extras.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_visualizer_use_custom_color"
+            android:title="@string/lockscreen_visualizer_enable_custom"
+            android:summary="@string/lockscreen_visualizer_enable_custom_summary"
+            android:dependency="lockscreen_visualizer_enabled"
+            android:defaultValue="false" />
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lock_screen_visualizer_custom_color"
+            android:title="@string/battery_bar_color"
+            android:dependency="lock_screen_visualizer_use_custom_color"
+            android:defaultValue="0xffffffff"
+            android:dialogTitle="@string/lockscreen_visualizer_custom_color" />
    
     <com.extras.settings.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_media_metadata"
