@@ -44,7 +44,7 @@
             android:entryValues="@array/qs_tile_animation_interpolator_values"
             android:persistent="false" />
 
-      <ListPreference
+       <ListPreference
         android:key="listview_animation"
         android:dialogTitle="@string/listview_animation_title"
         android:title="@string/listview_animation_title"

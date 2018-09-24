@@ -111,8 +111,6 @@ public class AnimationSettings extends SettingsPreferenceFragment
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setOnPreferenceChangeListener(this);
         mListViewInterpolator.setEnabled(listviewanimation > 0);
-
-
       }
 
     @Override
@@ -186,7 +184,7 @@ public class AnimationSettings extends SettingsPreferenceFragment
                     tileAnimationInterpolator, UserHandle.USER_CURRENT);
             updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
             return true;
-         } else if (preference == mListViewAnimation) {
+        } else if (preference == mListViewAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mListViewAnimation.findIndexOfValue((String) newValue);
             Settings.System.putInt(getContentResolver(),
