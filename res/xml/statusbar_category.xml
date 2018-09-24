@@ -108,6 +108,13 @@
             android:entries="@array/battery_percent_entries"
             android:entryValues="@array/battery_percent_values" />
 
+         <PreferenceScreen
+            android:key="battery_bar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.extras.settings.fragments.BatteryBar"
+            settings:allowDividerAbove="false" />
+
       <Preference
          android:key="carrierlabel_settings"
          android:title="@string/carrier_label_category_title"
